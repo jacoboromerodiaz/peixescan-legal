@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description"
+    content="Términos de uso de PeixeScan: cuentas, análisis mediante inteligencia artificial, publicaciones y normas de la comunidad." />
+  <meta name="theme-color" content="#f4f8fc" />
+  <title>Términos de uso | PeixeScan</title>
+
+  <style>
+    :root {
+      --background: #f4f8fc;
+      --surface: #ffffff;
+      --surface-secondary: #f7f9fc;
+      --text-primary: #102a43;
+      --text-secondary: #52677c;
+      --border: #dce6ef;
+      --primary: #174f78;
+      --primary-dark: #123f61;
+      --primary-soft: #eaf3f9;
+      --warning-background: #fff8e8;
+      --focus: rgba(23, 79, 120, 0.2);
+      --shadow: 0 20px 50px rgba(16, 42, 67, 0.09);
+      --radius-large: 22px;
+      --radius-medium: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top center, rgba(196, 220, 239, 0.5), transparent 420px),
+        var(--background);
+      color: var(--text-primary);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    a:focus-visible {
+      border-radius: 4px;
+      outline: 4px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 10;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      background: var(--primary-dark);
+      border-radius: 8px;
+      color: #ffffff;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .page {
+      width: min(100% - 32px, 900px);
+      margin: 0 auto;
+      padding:
+        max(42px, env(safe-area-inset-top)) 0 max(32px, env(safe-area-inset-bottom));
+    }
+
+    .brand {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .brand img {
+      display: block;
+      width: min(260px, 70vw);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid rgba(220, 230, 239, 0.9);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      padding: 38px 48px 30px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .icon {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 18px;
+      place-items: center;
+      background: var(--primary-soft);
+      border-radius: 50%;
+      color: var(--primary);
+    }
+
+    .icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.85rem, 5vw, 2.35rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 640px;
+      margin: 14px auto 0;
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .effective-date {
+      margin-top: 14px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .card-body {
+      padding: 36px 48px 48px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .summary-item {
+      padding: 17px;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+
+    .summary-item span {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+
+    .contents {
+      margin-bottom: 38px;
+      padding: 22px 24px;
+      background: var(--primary-soft);
+      border-radius: var(--radius-medium);
+    }
+
+    .contents h2 {
+      margin-top: 0;
+    }
+
+    .contents ol {
+      columns: 2;
+      column-gap: 38px;
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .contents li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    .section {
+      scroll-margin-top: 24px;
+    }
+
+    .section + .section {
+      margin-top: 40px;
+      padding-top: 38px;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    p + p {
+      margin-top: 12px;
+    }
+
+    ul {
+      margin: 14px 0 0;
+      padding-left: 22px;
+      color: var(--text-secondary);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .identity {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 0;
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+    }
+
+    .identity dt,
+    .identity dd {
+      margin: 0;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .identity dt {
+      background: var(--surface-secondary);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .identity dd {
+      color: var(--text-secondary);
+    }
+
+    .identity dt:last-of-type,
+    .identity dd:last-of-type {
+      border-bottom: 0;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 16px 18px;
+      background: #f2f7fb;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .warning {
+      background: var(--warning-background);
+      border-left-color: #c97918;
+    }
+
+    .report-box {
+      margin-top: 18px;
+      padding: 18px 20px;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+    }
+
+    .report-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    footer {
+      padding: 26px 16px 0;
+      color: var(--text-secondary);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 18px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 720px) {
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contents ol {
+        columns: 1;
+      }
+
+      .identity {
+        grid-template-columns: 1fr;
+      }
+
+      .identity dt,
+      .identity dd {
+        border-bottom: 0;
+      }
+
+      .identity dd {
+        padding-top: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .identity dd:last-of-type {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 20px, 900px);
+        padding-top: 26px;
+      }
+
+      .brand {
+        margin-bottom: 20px;
+      }
+
+      .card-header {
+        padding: 30px 22px 24px;
+      }
+
+      .card-body {
+        padding: 26px 22px 32px;
+      }
+
+      .section + .section {
+        margin-top: 32px;
+        padding-top: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <main class="page">
+    <header class="brand">
+      <img src="../assets/logo.png" alt="PeixeScan" />
+    </header>
+
+    <article class="card" id="contenido">
+      <header class="card-header">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h9l3 3v15H6z" />
+            <path d="M15 3v4h4" />
+            <path d="M9 12h6" />
+            <path d="M9 16h6" />
+          </svg>
+        </div>
+        <p class="eyebrow">Documento legal</p>
+        <h1>Términos de uso</h1>
+        <p class="subtitle">
+          Estas condiciones regulan el acceso a PeixeScan, sus análisis mediante inteligencia artificial y las
+          publicaciones compartidas con la comunidad.
+        </p>
+        <p class="effective-date">Entrada en vigor: 15 de julio de 2026</p>
+      </header>
+
+      <div class="card-body">
+        <div class="summary-grid" aria-label="Resumen de los términos">
+          <div class="summary-item">
+            <strong>La IA puede equivocarse</strong>
+            <span>Confirma siempre la especie, medidas y normativa en fuentes oficiales.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Tus fotos siguen siendo tuyas</strong>
+            <span>Solo autorizas los usos necesarios para prestar PeixeScan.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Comunidad responsable</strong>
+            <span>Respeta a otras personas, la fauna y las normas pesqueras aplicables.</span>
+          </div>
+        </div>
+
+        <nav class="contents" aria-labelledby="indice-titulo">
+          <h2 id="indice-titulo">Contenido</h2>
+          <ol>
+            <li><a href="#titular">Titular y aceptación</a></li>
+            <li><a href="#cuenta">Edad y cuenta</a></li>
+            <li><a href="#servicio">El servicio</a></li>
+            <li><a href="#ia">IA y mediciones</a></li>
+            <li><a href="#tarjeta">Tarjeta de referencia</a></li>
+            <li><a href="#pesca">Responsabilidad pesquera</a></li>
+            <li><a href="#contenido-usuario">Tu contenido</a></li>
+            <li><a href="#privacidad-social">Visibilidad y ubicación</a></li>
+            <li><a href="#conducta">Normas de conducta</a></li>
+            <li><a href="#moderacion">Moderación y denuncias</a></li>
+            <li><a href="#terceros">Servicios de terceros</a></li>
+            <li><a href="#disponibilidad">Disponibilidad y actualizaciones</a></li>
+            <li><a href="#propiedad">Propiedad de PeixeScan</a></li>
+            <li><a href="#terminacion">Suspensión y eliminación</a></li>
+            <li><a href="#responsabilidad">Responsabilidad</a></li>
+            <li><a href="#cambios">Cambios</a></li>
+            <li><a href="#ley">Ley y contacto</a></li>
+          </ol>
+        </nav>
+
+        <section class="section" id="titular">
+          <h2>1. Titular y aceptación</h2>
+          <p>PeixeScan es un servicio prestado bajo el siguiente nombre comercial:</p>
+
+          <dl class="identity">
+            <dt>Titular</dt>
+            <dd>Jacobo Romero Díaz</dd>
+            <dt>Contacto</dt>
+            <dd><a href="mailto:support@peixescan.com">support@peixescan.com</a></dd>
+            <dt>País</dt>
+            <dd>España</dd>
+          </dl>
+
+          <p>
+            <strong>Aceptas estos términos y confirmas haber leído la Política de privacidad.</strong> Puedes consultar
+            la <a href="../privacy/">Política de privacidad</a> antes de crear una cuenta. Si no estás de acuerdo, no
+            debes registrarte ni continuar usando el servicio.
+          </p>
+        </section>
+
+        <section class="section" id="cuenta">
+          <h2>2. Edad mínima y cuenta</h2>
+          <p>
+            Debes tener al menos 18 años para crear una cuenta. Antes del registro te pediremos que confirmes
+            expresamente que cumples esta edad y que aceptas estos términos. No realizamos una comprobación documental
+            de edad, pero no puedes falsear la confirmación ni ayudar a una persona menor a eludir esta restricción.
+          </p>
+          <p>
+            Debes facilitar información correcta, mantenerla actualizada y proteger el acceso a tu correo, dispositivo
+            y sesión. Tu cuenta es personal y no puedes venderla, cederla o utilizar la identidad de otra persona.
+            Comunícanos cualquier acceso no autorizado tan pronto como lo detectes.
+          </p>
+          <p>
+            Eres responsable de la actividad realizada desde tu cuenta, salvo que se deba a una actuación imputable a
+            PeixeScan o hayas comunicado oportunamente un acceso no autorizado.
+          </p>
+        </section>
+
+        <section class="section" id="servicio">
+          <h2>3. Qué ofrece PeixeScan</h2>
+          <p>
+            PeixeScan permite fotografiar o importar una captura, solicitar una identificación y medición aproximadas,
+            registrar observaciones, consultar un catálogo y compartir publicaciones con otros usuarios. También ofrece
+            perfiles, seguimientos, comentarios, votos y notificaciones.
+          </p>
+          <p>
+            La versión actual se ofrece gratuitamente. Si en el futuro incorporamos funciones de pago, informaremos de
+            sus precios y condiciones antes de que contrates o se genere cualquier cargo.
+          </p>
+          <p>
+            PeixeScan es una herramienta informativa y recreativa. No presta asesoramiento jurídico, científico,
+            veterinario, alimentario ni profesional, ni sustituye una identificación realizada por una persona experta.
+          </p>
+        </section>
+
+        <section class="section" id="ia">
+          <h2>4. Inteligencia artificial, identificación y mediciones</h2>
+          <p>
+            El análisis utiliza modelos de inteligencia artificial para segmentar la imagen, detectar una tarjeta de
+            referencia, proponer una especie y estimar longitud y peso. La identificación utiliza tecnología Google
+            Gemini a través de Replicate y el servicio disponible en el Espacio Económico Europeo se presta en modalidad
+            de pago. Los modelos pueden producir resultados falsos, incompletos o inconsistentes incluso cuando muestran
+            una confianza elevada.
+          </p>
+          <ul>
+            <li>Comprueba la especie mediante fuentes fiables antes de tomar cualquier decisión.</li>
+            <li>Trata la longitud y el peso como estimaciones, no como mediciones certificadas.</li>
+            <li>No utilices el resultado como prueba del cumplimiento de una talla mínima o de otra obligación.</li>
+            <li>Corrige o descarta un análisis cuando el resultado no coincida con la captura.</li>
+          </ul>
+          <p class="notice">
+            Ningún resultado de PeixeScan autoriza a capturar, retener, transportar, vender o consumir un animal.
+            Las fuentes oficiales y la normativa vigente prevalecen siempre sobre la información de la aplicación.
+          </p>
+        </section>
+
+        <section class="section" id="tarjeta">
+          <h2>5. Tarjeta de referencia CR80</h2>
+          <p>
+            La medición requiere una tarjeta física de formato CR80, aproximadamente 85,60 por 53,98 milímetros,
+            colocada plana, completa y junto al animal. La tarjeta solo sirve como referencia geométrica.
+          </p>
+          <p class="notice warning">
+            Utiliza una tarjeta en blanco o creada específicamente para medición. Está prohibido fotografiar una tarjeta
+            de pago activa, un documento de identidad, una tarjeta sanitaria, una licencia o cualquier soporte que muestre
+            nombre, número, firma, fotografía, código, banda magnética, chip u otros datos personales o financieros.
+          </p>
+          <p>
+            Si incluyes información sensible por error, cancela el análisis antes de publicar o elimina la captura de
+            inmediato. También puedes solicitar ayuda en
+            <a href="mailto:support@peixescan.com">support@peixescan.com</a>.
+          </p>
+        </section>
+
+        <section class="section" id="pesca">
+          <h2>6. Pesca legal y responsable</h2>
+          <p>Eres responsable de conocer y cumplir las normas aplicables al lugar, fecha, especie y modalidad de pesca:</p>
+          <ul>
+            <li>Licencias, permisos, autorizaciones y zonas restringidas.</li>
+            <li>Vedas, cupos, tallas mínimas, artes permitidas y horarios.</li>
+            <li>Protección de especies, espacios naturales y hábitats sensibles.</li>
+            <li>Normas sobre transporte, venta, trazabilidad y consumo.</li>
+            <li>Obligaciones de liberación y prácticas de bienestar animal.</li>
+          </ul>
+          <p>
+            Las referencias normativas o tallas mostradas en PeixeScan pueden estar desactualizadas, ser incompletas o no
+            corresponder a tu jurisdicción. Consulta siempre a la autoridad pesquera competente y libera de forma segura
+            cualquier ejemplar cuando exista duda sobre su identificación o legalidad.
+          </p>
+          <p>
+            No publiques ubicaciones precisas de especies protegidas, poblaciones vulnerables o lugares cuya difusión
+            pueda favorecer daños ambientales, furtivismo o acceso no autorizado.
+          </p>
+        </section>
+
+        <section class="section" id="contenido-usuario">
+          <h2>7. Fotos, textos y demás contenido</h2>
+          <p>
+            Conservas los derechos que tengas sobre las fotos, notas, comentarios y demás contenido que aportes. Debes
+            disponer de los derechos y permisos necesarios para subirlo y compartirlo, incluyendo el consentimiento de
+            las personas identificables cuando sea exigible.
+          </p>
+          <p>
+            Concedes al titular de PeixeScan una licencia no exclusiva, mundial y gratuita, limitada a almacenar,
+            reproducir técnicamente, comprimir, adaptar de formato, analizar y mostrar tu contenido dentro del servicio
+            según la visibilidad que selecciones. Esta licencia permite crear copias técnicas, miniaturas y resultados
+            derivados necesarios para operar, proteger y mantener PeixeScan.
+          </p>
+          <p>
+            La licencia finaliza cuando eliminas el contenido o la cuenta, salvo los datos que deban permanecer
+            temporalmente bloqueados por una obligación legal y las copias que otras personas hubieran conservado
+            legítimamente antes de la eliminación.
+          </p>
+          <p>
+            PeixeScan no utilizará tus fotos para entrenar modelos propios, licenciar conjuntos de datos, promocionar el
+            servicio fuera de la aplicación o realizar publicidad sin solicitar un consentimiento separado y específico.
+          </p>
+        </section>
+
+        <section class="section" id="privacidad-social">
+          <h2>8. Visibilidad, cuentas privadas y ubicación</h2>
+          <p>
+            Debes revisar las opciones de privacidad antes de publicar. Una cuenta abierta permite que otros usuarios
+            registrados vean sus capturas no secretas. En una cuenta privada, ese acceso se limita a seguidores aprobados.
+            Una captura marcada como secreta solo puede verla su titular.
+          </p>
+          <p>
+            Si ocultas una ubicación, PeixeScan deja de mostrar sus coordenadas a otras personas, pero puede conservarlas
+            y utilizarlas técnicamente para el análisis. Puedes omitir la ubicación por completo o retirar el permiso desde
+            los ajustes del dispositivo.
+          </p>
+          <p>
+            Aunque PeixeScan utilice accesos temporales para las imágenes, no puede impedir que una persona autorizada
+            haga capturas de pantalla o copias. No publiques información cuya difusión pueda ponerte en riesgo a ti, a
+            otras personas, a una propiedad privada o al entorno natural.
+          </p>
+        </section>
+
+        <section class="section" id="conducta">
+          <h2>9. Normas de conducta</h2>
+          <p>No puedes utilizar PeixeScan para:</p>
+          <ul>
+            <li>Publicar contenido ilegal, fraudulento, engañoso, amenazante, discriminatorio, sexualmente explícito o violento.</li>
+            <li>Acosar, intimidar, suplantar, difamar o revelar datos personales de otra persona.</li>
+            <li>Compartir imágenes de menores o de terceras personas sin los permisos necesarios.</li>
+            <li>Infringir derechos de autor, marcas, privacidad, propia imagen u otros derechos.</li>
+            <li>Promover furtivismo, maltrato animal, comercio ilegal o daños a especies y hábitats.</li>
+            <li>Enviar spam, manipular votos o seguimientos, automatizar interacciones o crear cuentas falsas.</li>
+            <li>Introducir malware, eludir controles, acceder a cuentas ajenas o interferir con la infraestructura.</li>
+            <li>Extraer masivamente datos o reutilizar el servicio para entrenar sistemas sin autorización escrita.</li>
+            <li>Utilizar resultados de IA para engañar sobre una especie, medida, peso, fecha o lugar de captura.</li>
+          </ul>
+        </section>
+
+        <section class="section" id="moderacion">
+          <h2>10. Moderación, denuncias y reclamaciones</h2>
+          <p>
+            Podemos revisar contenido cuando recibamos una denuncia o detectemos indicios de incumplimiento. Según la
+            gravedad, podremos limitar su visibilidad, retirarlo, restringir funciones, conservarlo de forma bloqueada
+            cuando sea necesario o suspender una cuenta.
+          </p>
+          <p>
+            Al decidir tendremos en cuenta el contexto, la gravedad, la frecuencia, los derechos afectados, posibles
+            riesgos y las obligaciones legales. Cuando proceda y dispongamos de un medio de contacto, comunicaremos la
+            medida, su motivo y la forma de solicitar una revisión. No utilizamos actualmente decisiones automatizadas
+            para imponer sanciones definitivas de moderación.
+          </p>
+
+          <div class="report-box">
+            <strong>Denunciar contenido o conducta</strong>
+            <p>
+              Escribe a <a href="mailto:support@peixescan.com">support@peixescan.com</a> e incluye el enlace o identificador
+              de la captura o cuenta, una explicación clara, el motivo de la denuncia y, cuando sea necesario, información
+              que permita comprobarla. No envíes documentos sensibles salvo que te los solicitemos.
+            </p>
+          </div>
+
+          <p>
+            La persona afectada por una retirada, restricción o suspensión puede solicitar una revisión en el mismo
+            correo. Corregiremos la decisión cuando resulte infundada. Estos mecanismos no limitan el derecho a acudir a
+            autoridades, tribunales u otros mecanismos reconocidos por la normativa aplicable.
+          </p>
+        </section>
+
+        <section class="section" id="terceros">
+          <h2>11. Proveedores y servicios de terceros</h2>
+          <p>
+            PeixeScan depende de Supabase para autenticación, datos y almacenamiento; Replicate para ejecutar los
+            modelos de IA; Google Gemini como tecnología del modelo de identificación utilizado a través de Replicate;
+            Render para alojar la API y el worker; Sentry para observabilidad y diagnóstico; Resend para enviar correos
+            de autenticación; Gmail y el forwarding de Spaceship para gestionar el correo de soporte; y Apple App Store
+            y Google Play para distribuir la aplicación. Sus interrupciones o cambios pueden afectar temporalmente a
+            determinadas funciones.
+          </p>
+          <p>
+            Algunos enlaces pueden dirigir a sitios externos. PeixeScan no controla su contenido ni sus condiciones y el
+            acceso se realiza bajo tu responsabilidad. La forma en que los proveedores tratan datos se explica en la
+            <a href="../privacy/">Política de privacidad</a>.
+          </p>
+        </section>
+
+        <section class="section" id="disponibilidad">
+          <h2>12. Disponibilidad, mantenimiento y actualizaciones</h2>
+          <p>
+            Procuramos mantener PeixeScan disponible y seguro, pero no garantizamos un funcionamiento ininterrumpido.
+            Podemos realizar mantenimiento, limitar temporalmente análisis, aplicar controles de uso o suspender funciones
+            ante incidencias, riesgos de seguridad, cambios de proveedores o causas fuera de nuestro control.
+          </p>
+          <p>
+            Algunas versiones pueden dejar de ser compatibles. Cuando una actualización sea necesaria para mantener la
+            seguridad, compatibilidad o funcionamiento, podremos exigir que instales una versión más reciente antes de
+            continuar. La pantalla de estado indicará si existe mantenimiento o una actualización obligatoria.
+          </p>
+          <p>
+            Podemos modificar o retirar funciones, procurando avisar con antelación razonable cuando el cambio afecte de
+            forma relevante al servicio y no responda a una urgencia técnica, legal o de seguridad.
+          </p>
+        </section>
+
+        <section class="section" id="propiedad">
+          <h2>13. Propiedad intelectual de PeixeScan</h2>
+          <p>
+            El software, diseño, marca, logotipos, textos propios, estructura del catálogo y demás elementos de PeixeScan
+            pertenecen a su titular o se utilizan con autorización. Estos términos te conceden un derecho personal,
+            limitado, no exclusivo, revocable e intransferible para utilizar la aplicación conforme a sus funciones.
+          </p>
+          <p>
+            No puedes copiar, vender, sublicenciar, descompilar, modificar, distribuir ni explotar PeixeScan salvo en la
+            medida permitida expresamente por la ley o por una autorización escrita. Las fotografías y textos aportados
+            por usuarios siguen sujetos a los derechos de sus respectivos titulares.
+          </p>
+        </section>
+
+        <section class="section" id="terminacion">
+          <h2>14. Suspensión, baja y eliminación</h2>
+          <p>
+            Puedes dejar de usar PeixeScan y eliminar tu cuenta en cualquier momento desde los ajustes. Si no tienes
+            acceso, puedes utilizar la <a href="../delete-account/">página de eliminación de cuenta</a>. La eliminación
+            es permanente y se gestiona según la Política de privacidad.
+          </p>
+          <p>
+            Podemos restringir o suspender una cuenta cuando exista un incumplimiento relevante, un riesgo para usuarios,
+            terceros, fauna o infraestructura, una obligación legal o un uso fraudulento. Salvo urgencia o prohibición
+            legal, intentaremos informar del motivo y permitir que solicites una revisión.
+          </p>
+          <p>
+            Si el servicio fuera a cerrarse de manera definitiva, procuraremos comunicarlo con antelación razonable y
+            facilitar la eliminación o recuperación de la información disponible cuando resulte técnica y legalmente posible.
+          </p>
+        </section>
+
+        <section class="section" id="responsabilidad">
+          <h2>15. Garantías y responsabilidad</h2>
+          <p>
+            PeixeScan se presta con la diligencia razonablemente exigible, pero la identificación y medición automatizadas
+            no garantizan exactitud. Tampoco garantizamos que el catálogo, las tallas legales u otra información de terceros
+            estén completos o actualizados para todas las regiones.
+          </p>
+          <p>
+            En la máxima medida permitida por la ley, no respondemos de decisiones pesqueras, alimentarias, comerciales,
+            científicas o de seguridad adoptadas únicamente a partir de un resultado de PeixeScan; del contenido publicado
+            por usuarios; ni de interrupciones inevitables o causadas por servicios externos.
+          </p>
+          <p>
+            Nada en estos términos excluye o limita responsabilidades que legalmente no puedan excluirse, incluidos los
+            derechos imperativos de consumidores, los daños causados por dolo o culpa grave y las responsabilidades que la
+            normativa atribuya al prestador.
+          </p>
+        </section>
+
+        <section class="section" id="cambios">
+          <h2>16. Cambios en los términos</h2>
+          <p>
+            Podemos actualizar estos términos para reflejar cambios legales, técnicos o funcionales. Publicaremos la fecha
+            de la nueva versión y avisaremos por un medio adecuado cuando el cambio sea relevante. Los cambios no se
+            aplicarán retroactivamente en perjuicio de derechos adquiridos.
+          </p>
+          <p>
+            Si no aceptas una modificación relevante, puedes dejar de utilizar PeixeScan y eliminar tu cuenta antes de que
+            entre en vigor. El uso posterior implica la aceptación de la versión aplicable, siempre que haya sido comunicada
+            correctamente.
+          </p>
+        </section>
+
+        <section class="section" id="ley">
+          <h2>17. Legislación, resolución de conflictos y contacto</h2>
+          <p>
+            Estos términos se rigen por la legislación española, sin privarte de la protección obligatoria que te
+            corresponda como consumidor conforme a la normativa de tu lugar de residencia.
+          </p>
+          <p>
+            Intentaremos resolver de buena fe cualquier incidencia que comuniques a
+            <a href="mailto:support@peixescan.com">support@peixescan.com</a>. Si eres consumidor, podrás acudir a los
+            tribunales competentes conforme a la normativa aplicable, incluidos los de tu domicilio cuando así esté previsto.
+          </p>
+          <p>
+            Si una cláusula fuera declarada inválida, las demás continuarán vigentes y la cláusula afectada se interpretará
+            del modo válido que mejor respete su finalidad y los derechos de las partes.
+          </p>
+        </section>
+      </div>
+    </article>
+
+    <footer>
+      <nav class="footer-links" aria-label="Enlaces legales">
+        <a href="../privacy/">Política de privacidad</a>
+        <a href="../delete-account/">Eliminar cuenta</a>
+        <a href="mailto:support@peixescan.com">support@peixescan.com</a>
+      </nav>
+      <div>© <span id="current-year"></span> PeixeScan</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
