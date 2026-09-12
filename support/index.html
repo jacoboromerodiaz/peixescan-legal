@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description"
+    content="Contacta con el soporte de PeixeScan para recibir ayuda con la aplicación, resolver dudas o enviar sugerencias." />
+  <meta name="theme-color" content="#f4f8fc" />
+  <title>Soporte | PeixeScan</title>
+
+  <style>
+    :root {
+      --background: #f4f8fc;
+      --surface: #ffffff;
+      --surface-secondary: #f7f9fc;
+      --text-primary: #102a43;
+      --text-secondary: #52677c;
+      --border: #dce6ef;
+      --primary: #174f78;
+      --primary-dark: #123f61;
+      --primary-soft: #eaf3f9;
+      --focus: rgba(23, 79, 120, 0.2);
+      --shadow: 0 20px 50px rgba(16, 42, 67, 0.09);
+      --radius-large: 22px;
+      --radius-medium: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top center,
+          rgba(196, 220, 239, 0.5),
+          transparent 420px),
+        var(--background);
+      color: var(--text-primary);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    a:focus-visible {
+      border-radius: 4px;
+      outline: 4px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 10;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      background: var(--primary-dark);
+      border-radius: 8px;
+      color: #ffffff;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .page {
+      width: min(100% - 32px, 680px);
+      margin: 0 auto;
+      padding:
+        max(42px, env(safe-area-inset-top)) 0 max(32px, env(safe-area-inset-bottom));
+    }
+
+    .brand {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .brand img {
+      display: block;
+      width: min(260px, 70vw);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid rgba(220, 230, 239, 0.9);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      padding: 38px 40px 28px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .icon {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 18px;
+      place-items: center;
+      background: var(--primary-soft);
+      border-radius: 50%;
+      color: var(--primary);
+    }
+
+    .icon svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 5vw, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 520px;
+      margin: 14px auto 0;
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .card-body {
+      padding: 32px 40px 40px;
+    }
+
+    .section + .section {
+      margin-top: 34px;
+      padding-top: 34px;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    p + p {
+      margin-top: 12px;
+    }
+
+    .contact-card {
+      margin-top: 18px;
+      padding: 20px;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      text-align: center;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      margin-top: 16px;
+      padding: 13px 20px;
+      background: var(--primary);
+      border-radius: 11px;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      transition:
+        background 150ms ease,
+        transform 100ms ease;
+    }
+
+    .contact-email:hover {
+      background: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    .contact-email:active {
+      transform: translateY(1px);
+    }
+
+    .contact-email:focus-visible {
+      outline: 4px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .help-list {
+      margin: 14px 0 0;
+      padding-left: 21px;
+      color: var(--text-secondary);
+    }
+
+    .help-list li + li {
+      margin-top: 6px;
+    }
+
+    .links {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .links a {
+      display: block;
+      padding: 14px 16px;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--primary);
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      border-color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 26px 16px 0;
+      color: var(--text-secondary);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 18px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 20px, 680px);
+        padding-top: 26px;
+      }
+
+      .brand {
+        margin-bottom: 20px;
+      }
+
+      .card-header {
+        padding: 30px 22px 24px;
+      }
+
+      .card-body {
+        padding: 26px 22px 30px;
+      }
+
+      .contact-email {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <main class="page">
+    <header class="brand">
+      <img src="../assets/logo.png" alt="PeixeScan" />
+    </header>
+
+    <article class="card" id="contenido">
+      <header class="card-header">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 15a4 4 0 0 1-4 4H9l-5 3 1.6-4A7 7 0 0 1 4 13V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4z" />
+            <path d="M8 11h.01" />
+            <path d="M12 11h.01" />
+            <path d="M16 11h.01" />
+          </svg>
+        </div>
+
+        <h1>Soporte de PeixeScan</h1>
+
+        <p class="subtitle">
+          ¿Necesitas ayuda con PeixeScan? Si tienes algún problema con la aplicación, una duda sobre su funcionamiento
+          o quieres enviarnos una sugerencia, puedes ponerte en contacto con nosotros.
+        </p>
+      </header>
+
+      <div class="card-body">
+        <section class="section">
+          <h2>Contacta con soporte</h2>
+          <p>
+            Escríbenos por correo y te responderemos lo antes posible. Puedes usar este canal para informar de un
+            problema, solicitar ayuda con tu cuenta o enviarnos una sugerencia.
+          </p>
+
+          <div class="contact-card">
+            <p>Correo de soporte de PeixeScan</p>
+            <a class="contact-email" href="mailto:support@peixescan.com?subject=Soporte%20de%20PeixeScan">
+              support@peixescan.com
+            </a>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Para poder ayudarte</h2>
+          <p>Si nos escribes por un problema técnico, incluye solo la información necesaria:</p>
+          <ul class="help-list">
+            <li>Una breve descripción de lo que estabas intentando hacer.</li>
+            <li>El mensaje de error que has visto, si aparece alguno.</li>
+            <li>La versión de PeixeScan y el modelo de tu dispositivo, si los conoces.</li>
+          </ul>
+          <p>No envíes contraseñas, códigos de acceso ni imágenes con información personal sensible.</p>
+        </section>
+
+        <section class="section">
+          <h2>Gestiones frecuentes</h2>
+          <p>También puedes consultar estas páginas para resolver gestiones relacionadas con tu cuenta y tus datos.</p>
+          <nav class="links" aria-label="Gestiones de soporte">
+            <a href="../delete-account/">Eliminar una cuenta</a>
+            <a href="../privacy/">Consultar la política de privacidad</a>
+            <a href="../terms/">Consultar los términos de uso</a>
+          </nav>
+        </section>
+      </div>
+    </article>
+
+    <footer>
+      <nav class="footer-links" aria-label="Enlaces legales">
+        <a href="../privacy/">Política de privacidad</a>
+        <a href="../terms/">Términos de uso</a>
+        <a href="../attributions/">Atribuciones y fuentes</a>
+        <a href="../delete-account/">Eliminar cuenta</a>
+        <a href="mailto:support@peixescan.com">support@peixescan.com</a>
+      </nav>
+
+      <div>© <span id="current-year"></span> PeixeScan</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
